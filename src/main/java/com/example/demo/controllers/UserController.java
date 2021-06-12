@@ -61,7 +61,7 @@ public class UserController {
 			return ResponseEntity.badRequest().build();
 		}
 		user.setPassword(bCryptPasswordEncoder.encode(createUserRequest.getPassword()));
-		logger.error("User {} was successfully created and has password of: {}!", createUserRequest.getUsername(),user.getPassword());
+		logger.error("User {} was successfully created and has password of: {}!!", createUserRequest.getUsername(),user.getPassword());
 //		System.out.println(user.getPassword());
 		userRepository.save(user);
 		return ResponseEntity.ok(user);
